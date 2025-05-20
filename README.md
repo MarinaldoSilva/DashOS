@@ -1,55 +1,43 @@
-# Shiny Python Projects
-Python projects built using the Shiny Framework
+# Projetos Shiny em Python
+Aplicações interativas desenvolvidas com o Shiny Framework para Python.
 
 <img src='./assets/shiny.jpeg' width=50%>
 
-## Sales Dashboard Project
+Dashboard de Ordens de Serviço (OS)
+Dashboard de OS
 
-[Sales Dashboard Project](./sales)
+Este projeto utiliza Shiny para Python para criar um dashboard interativo com dados de ordens de serviço. Ele explora conceitos de reatividade, ajustes de layout e personalização visual para criar uma interface dinâmica.
 
-Given 12 months of (mock) sales data from an electronics store, what type of Shiny application can we build?
+📊 Funcionalidades principais:
+✅ Interatividade: O usuário pode selecionar um executor e visualizar os dados correspondentes. ✅ Gráficos dinâmicos: Utiliza Plotly para exibir gráficos de distribuição de OS. ✅ Visualização responsiva: Ajuste automático do layout para diferentes dispositivos. ✅ Manipulação de dados: Usa Pandas para carregar e processar os dados.
 
-This project walks through the basics of Shiny, how reactivity works, how to customize your application layout, and more. This is a great place to start if you are new to Shiny.
+🔹 Código-fonte completo: Link do repositório
 
-### Part 1: How to Build, Deploy, & Share a Python Application in 20 Minutes
-
+## Seções do Projeto
+Parte 1: Como Criar, Implantar e Compartilhar um Aplicativo Shiny em 20 Minutos
 <img src='./assets/video1.png' width=50%>
 
-Walks through the basics of getting started with Shiny for Python and we build
-and deploy a simple app by the end of the video.
+Walks through the basics of getting started with Shiny for Python and we build and deploy a simple app by the end of the video.
 
-[Finished Source Code](https://github.com/KeithGalli/shiny-python-projects/tree/video1/sales)
+🔹 Código final: Link do código 📺 Vídeo tutorial: Assista aqui
 
-[Video Link](https://youtu.be/I2W7i7QyJPI?si=4gQSbdKbF50SX3uO)
-
-### Part 2: How to Make Interactive Python Dashboards! (Reactivity in Shiny)
-
+### Parte 2: Como Criar Dashboards Interativos com Shiny! (Reatividade)
 <img src='./assets/video2.png' width=50%>
 
-Walks through the important concept of reactivity in Shiny and how we can add
-and manage the interactivity of our Python applications.
+Explicação sobre reatividade no Shiny e como manipular interações dentro do dashboard.
 
-[Finished Source Code](https://github.com/KeithGalli/shiny-python-projects/tree/video2/sales)
+🔹 Código final: Link do código 📺 Vídeo tutorial: Assista aqui
 
-[Video Link](https://youtu.be/SLkA-Z8HTAE?si=DE0xSYtlJ0ym6lw8)
-
-### Part 3: How to make your Python Dashboard look Professional! (Layouts in Shiny)
-
+### Parte 3: Como Deixar Seu Dashboard Profissional! (Layouts no Shiny)
 <img src='./assets/video3.png' width=50%>
 
-We focus on enhancing the visual appeal and structure of your Shiny dashboards
-using various layout components.
+Melhorias na aparência do dashboard usando layouts flexíveis e responsivos.
 
-[Finished Source Code](https://github.com/KeithGalli/shiny-python-projects/tree/video3/sales)
+🔹 Código final: Link do código 📺 Vídeo tutorial: Assista aqui
 
-[Video Link](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
-### Part 4: How to combine Matplotlib, Plotly, Seaborn, and more in a single Python Dashboard!
-
+### Parte 4: Como Integrar Matplotlib, Plotly e Seaborn em um Único Dashboard!
 <img src='./assets/video4.png' width=50%>
 
-We show how we can render various types of visualizations within Shiny.
+Técnicas para combinar diferentes bibliotecas de visualização no Shiny.
 
-[Finished Source Code](https://github.com/KeithGalli/shiny-python-projects/tree/video4/sales)
-
-[Video Link](https://youtu.be/dQw4w9WgXcQ?si=0JJvt-tTj68fna4i)
+🔹 Código final: Link do código 📺 Vídeo tutorial: Assista aqui
