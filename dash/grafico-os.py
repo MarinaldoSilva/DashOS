@@ -1,17 +1,41 @@
+from io import BytesIO
 from shiny import App, ui, render
 import pandas as pd
 import plotly.express as px
 from pathlib import Path
+import os
+from ftplib import FTP
 import openpyxl
 
-# Função para carregar os dados do Excel
-def carregar_dados():
-    arquivo_excel = Path(__file__).parent / "dados-tratados.xlsx"
-    df = pd.read_excel(arquivo_excel, engine="openpyxl")
+base_dir_lunix = Path("/tratar_dados")
+base_dir_windows = Path("C:\tratar_dados")
+FTP_HOST = "127.0.0.1"
+FTP_USER = "tesla"
+FTP_PASS = "tesla"
+FTP_FILE = "dados-tratados.xlsx"
+CAMINHO_ARQUIVO = base_dir_lunix / FTP_FILE if (base_dir_lunix / FTP_FILE).exists() else base_dir_windows / FTP_FILE
+
+def carregar_dados_local():
+    df = pd.read_excel(CAMINHO_ARQUIVO, engine="openpyxl")
     return df
 
+def carregar_dados_ftp():
+    try:
+        ftp = FTP(FTP_HOST)
+        ftp.login(user=FTP_USER, passwd=FTP_PASS) #conexão com o servidor FTP
+
+        with BytesIO() as buffer:
+            ftp.retrbinary(f"RETR {FTP_FILE}", buffer.write)
+            buffer.seek(0)
+            df = pd.read_excel(buffer, engine="openpyxl")
+        ftp.quit()
+        return df
+    except Exception as e:
+        print(f"Erro ao carregar dados do FTP: {e}")
+        return carregar_dados_local()
+
 # Carrega os dados ao iniciar o app
-df = carregar_dados()
+df = carregar_dados_ftp()
 
 # Interface do usuário
 app_ui = ui.page_fluid(
@@ -35,7 +59,7 @@ app_ui = ui.page_fluid(
 )
 
 def server(input, output, session):
-    df = carregar_dados()
+    df = carregar_dados_ftp()
 
     @output
     @render.ui
